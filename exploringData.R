@@ -1,0 +1,11 @@
+library(MASS)
+mydata<-airquality
+View(mydata)
+head(mydata)
+tail(mydata)
+head(mydata,8)
+tail(mydata,9)
+summary(mydata)
+mean(mydata$Ozone)
+mean(mydata$Solar.R)
+mean(mydata$Temp)
