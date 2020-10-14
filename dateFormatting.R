@@ -31,8 +31,8 @@ dt3<-as.Date(myvar,format = "%d%b%Y")
 dt3
 class(dt3)
 myvar2<-"01-05-2020"
-dt4<-as.Date(myvar2,format="%d-%m-%Y")
-dt4
+dt6<-as.Date(myvar2,format="%d-%m-%Y")
+dt6
 
 #compare date
 dt1>dt2
