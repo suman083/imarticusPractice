@@ -21,4 +21,5 @@ cor(mydata,use="complete.obs")
 summary(iris)
 hist(iris$Sepal.Width)
 hist(iris$Sepal.Width,col = "orange")
-hist((iris$Sepal.Length,col="red",xlab="sepal withh",ylab=ysapal,main="saple with width"))
+#corrected
+hist(iris$Sepal.Length,col="red",xlab="sepal withh",ylab="ysapal",main="saple with width")
