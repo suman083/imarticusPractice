@@ -111,4 +111,58 @@ resultm
 #can be created with data.frame()
 #rolnames are usually 1...n , find no of rows and colms wit nrow(df) adn ncol(df)
 
+subj<- c("physics","math","English")
+percentage<- c(95,85,87)
 
+student_df<- data.frame(subj,percentage)
+student_df
+str(student_df) #to get structure
+summary(student_df)
+
+#missing valuesare denoted by Na or NaN
+#is.na() is used to test  if object in NA
+#is.nan() is used to test for NaN
+#NA valuecan be integer NA ,character NA, etc.
+x <- c(2,3,5,7,NA,3)
+is.na(x) #true
+is.nan(x) #false
+
+y <- c(2,3,5,7,NaN,3)
+is.na(y) #true
+is.nan(y) #true
+
+#missing values
+# if large no of observation/datapoint delete missing values wile model building
+#if particular variable have more missing value than rest of variable, delete tht variable
+#imputation with mean/median/mode
+library(Hmisc)
+impute(BostonHousing$ptratio,mean)
+impute(BostonHousing$ptratio,median)
+impute(BostonHousing$ptratio,20)
+BostonHousing$ptratio[is.na(BostonHousing$ptratio)]<- mean(BostonHousing$ptratio,na.rm=T)
+#Imputatio of categorical variables
+#mode imputation is one method but introduces bias
+#treat missing value as seperate cateogory, use them as different level - simple method
+
+
+
+#Apply Family
+#any function can be passed into apply()
+#can be used for input list, matrix or array and apply function
+#Syntax::apply(x,margin,function)
+#margin=1: appy manipulation on rows
+#margin=2: apply manipulation on columns
+mymatrix<- matrix(1:15,5,6)
+mymatrix
+apply(mymatrix,1,sd)
+
+lapply(list(1:20),median)#retun list
+sapply(list(1:20),median)#return vector
+#tapply(x, index,function=NULL) #function applied to each element group by index
+ages<- c(25,25,69,10)
+location<-c('rural','urban','rural','urban')
+tapply(ages,location,mean)
+# vapply - similar to sapply but need to mention what type of data you require
+vapply(list(1:20),sum,numeric(1))
+#if your function returs more than one numeric 
+#value then Fun.value=numeric(1) will return error
