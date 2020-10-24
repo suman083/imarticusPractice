@@ -103,3 +103,4 @@ steve<-merge(x=infantry,y=targets)
 steve
 View(steve)
 write.csv(steve,"G:/Suman/batch34/steve.csv")
+print("suman")
