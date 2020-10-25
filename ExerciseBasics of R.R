@@ -80,4 +80,11 @@ hist(cs2m$Age,col = "red",xlab = "agreof ", ylab = "count",main = "histogram")
 hist(cs2m$Age,col = "red")
 install.packages("psych")
 library(psych)
-desc
+describe(cs2m$Age)
+##Box plot 
+boxplot(cs2m$Age)
+
+b=c(21,22,20.5,22,23,24.7,25,31,27,26.5,125.3)
+hist(b,col = "red")
+boxplot(b,horizontal = T)
+par(mfrow=c(1,2)) # mf - marginf from row
