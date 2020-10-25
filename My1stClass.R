@@ -41,6 +41,9 @@ k1=seq(9,10,0.5)
 k1
 learn<-c('you','me','R')
 LEARN
+learn[1:3]
+learn[c(1,3)]##important
+
 learn
 learn[1]
 learn[3]
@@ -53,6 +56,9 @@ learn[4]<-'spas'
 learn[5:10]<-learn ##How to replace mutliple element of vector in one go
 a<-c(1,2,3)
 b<-c(4,5,6)
+learn[-4:-4]
+learn[3]
+learn[]
 a+b
 a-b
 a*b
@@ -81,6 +87,8 @@ percent
 lunch<-c('biryani','chicken kabab','biryani','chicken kabab','veg pulao')
 lunch
 str(lunch)
+str(percent)
+class(lunch)
 yummy<-as.factor(lunch)
 yummy
 str(yummy)#factor page 33
@@ -96,6 +104,7 @@ joy[1]
 joy[[1]]
 joy[[2]]
 joy[2]
+str(joy)
 ##Access data frame  need to ask
 joy[["yummy"]]
 
@@ -107,6 +116,9 @@ print("suman")
 
 abc1<-c('suman','kumar')
 class(abc1)
+
 abc<-c("suman","kumar")
 abc
 class(abc)
+targets <- read.csv("G:/Suman/batch34/basicsofr/targets.csv")
+View(targets)
