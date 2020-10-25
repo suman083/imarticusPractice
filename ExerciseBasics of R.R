@@ -57,3 +57,27 @@ q<-matrix(seq(1:6),2,3)
 q
 tests<-merge(x=merge1,y=merge2)
 View(tests)
+names1<-c('Alberic', 'John', 'Steve', 'Chris')
+
+#midterm (87, 89, 93, 95
+midterm<-c(87,89,93,95)
+final<- c(92, 94, 95, 98) 
+result<-data.frame(names1,midterm,final)
+result
+cs2m <- read.csv("G:/Suman/batch34/cs2m.csv", stringsAsFactors=TRUE)
+View(cs2m)
+str(cs2m)
+class(cs2m)
+dim(cs2m)
+summary(cs2m)
+cs2m$Prgnt<-as.factor(cs2m$Prgnt)
+cs2m$AnxtyLH<-as.factor(cs2m$AnxtyLH)
+cs2m$DrugR<-as.factor(cs2m$DrugR)
+#age 
+hist(cs2m$Age,col = "red",
+                xlab="Age",ylab = "Counts", main = "histogram of age")
+hist(cs2m$Age,col = "red",xlab = "agreof ", ylab = "count",main = "histogram")
+hist(cs2m$Age,col = "red")
+install.packages("psych")
+library(psych)
+desc
