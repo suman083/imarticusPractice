@@ -55,3 +55,5 @@ w
 # Say a vector q is having numbers from 1 to 6. Create a matrix of the order 2 by 3
 q<-matrix(seq(1:6),2,3)
 q
+tests<-merge(x=merge1,y=merge2)
+View(tests)

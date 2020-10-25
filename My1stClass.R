@@ -104,3 +104,9 @@ steve
 View(steve)
 write.csv(steve,"G:/Suman/batch34/steve.csv")
 print("suman")
+
+abc1<-c('suman','kumar')
+class(abc1)
+abc<-c("suman","kumar")
+abc
+class(abc)
