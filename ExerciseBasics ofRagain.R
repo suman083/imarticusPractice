@@ -43,3 +43,4 @@ result$final
 tests<-merge(merge1,merge2)
 tests
 write.csv(tests,"G:/Suman/batch34/tests.csv")
+View(tests)
