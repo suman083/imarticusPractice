@@ -29,5 +29,9 @@ names(j)
 names(j)[5]="Anxiety"
 names(j)[2]="Colesterol"
 names(j)
-cs2m_asce<-arrange(cs2m,age)
+
+##arrange ascending descending
+cs2m_asce<- arrange(cs2m,age)
+head(cs2m_asce)
+rlang::last_error()
 
