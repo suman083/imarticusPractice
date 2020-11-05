@@ -31,7 +31,26 @@ names(j)[2]="Colesterol"
 names(j)
 
 ##arrange ascending descending
-cs2m_asce<- arrange(cs2m,age)
+library(dplyr)
+cs2m_asce<- arrange(cs2m,Age)
+cs2m_asce1<-arrange
+cs2m_asce1<-arrange
 head(cs2m_asce)
-rlang::last_error()
+##rlang::last_error()
+View(grades)
+View(grades$quiz1)
+#sub set
+grades1<-subset(grades,select = c(quiz1,gpa,final))
+head(grades1)
+grades2<-select(grades,quiz1,gpa,final)
+grades2
+##apply columns mean
+apply(cs2m,2,mean)
+mean(cs2m)
+mean(cs2m$BP)
 
+##apply row mean
+apply(cs2m,1,mean)
+View(mtcars)
+##average column
+by(mtcars[ ,2], mtcars$cyl, colMeans)
