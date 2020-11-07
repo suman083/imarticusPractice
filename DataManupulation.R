@@ -91,4 +91,47 @@ grades$catgryfinal<-ifelse(grades$final<60,yes="final<60",no="final>60")
 head(grades)
 table(grades$catgryfinal)
 
-##Convert final into categories with increment of 5
+##Convert final into categories with increment of 5  cat command
+grades$final_cat<-cut(grades$final,breaks = seq(40,75,5),labels=c("final1","final2","final3","final4","final5","final6","final7"))
+head(grades)
+
+#table command
+table(grades$catgryfinal)
+table(grades$final_cat)
+library(readr)
+install.packages("readr")
+library(readr)
+k<-read.csv("G:/Suman/batch34/cs2m.csv", stringsAsFactors=TRUE)
+str(k)
+summary(k$Age)
+m=k
+summary(m)
+View(m)
+##within command
+m<-within(m,{
+  agecat<-NA
+  agecat[Age>=15 & Age<=25]<-'Low'
+  agecat[Age>=26 & Age<=41]<-'Middle'
+  agecat[Age>41]<-'High'
+})
+head(m,3)
+##Convert ingethnicity into two categories category 1 = 1, 3& 5; category 2 = 2 & 4
+
+grades$cateth<-grades$ethnicity
+grades$cateth[grades$cateth==1|grades$cateth==3|grades$cateth==5]=1
+grades$cateth[grades$cateth==2|grades$cateth==4]=2
+View(grades)
+head(grades)
+
+##Take out 20% observations randomly from the file
+
+sam<-sample(x=1:nrow(grades),size = 0.2*nrow(grades))
+grade20<-grades[sam,]
+head(grade20)
+##all grade 20
+grade20
+##case
+sam
+##Summarize
+library(psych)
+summarise(cs2m,mean_age=mean(Age,na.rm = T),median_age=median(Age,na.rm = T))
