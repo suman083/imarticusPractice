@@ -1,9 +1,14 @@
 #classpractice7thnov
+grades <- read.csv("G:/Suman/batch34/grades.csv", stringsAsFactors=TRUE)
+
 a<-grades[,c(13,18,19)]
+library(psych)
 pairs.panels(a)
 a
 names(grades)
 colnames(grades)
+
+
 variable.names(grades)
 str(cs2m)
 cs2m$Prgnt<-as.numeric(cs2m$Prgnt)
@@ -57,6 +62,8 @@ data
 data[!is.na(data)]
 View(imp.csv)
 ###missing value
+imp <- read.csv("G:/Suman/batch34/imp.csv", stringsAsFactors=TRUE)
+
 dim(imp)
 str(imp)
 summary(imp)
@@ -74,7 +81,7 @@ hist(imp$variable2)
 median(imp$variable2)
 median(imp$variable2,na.rm = T)
 imp$variable2[is.na(imp$variable2)]<-median(imp$variable2)
-install.packages("VIM")
+#install.packages("VIM")
 
 library(VIM)
 imp<-kNN(imp)
@@ -111,3 +118,5 @@ boxplot(framingham$BMI,col = "red")
 framingham$BMI[framingham$BMI>UB]<-UB
 framingham$BMI[framingham$BMI]<-LB
 boxplot(framingham$BMI)
+framingham$BMI[framingham$BMI>UB]
+
