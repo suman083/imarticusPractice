@@ -6,7 +6,12 @@ t_complete=t[complete.cases(t),]
 dim(t_complete)
 install.packages(dplyr)
 library(dplyr)
+cs2m
 cs2m_mutate<-mutate(cs2m, Chlstrl_bp=Chlstrl/BP)
+cs2m$ratio<-c(cs2m$BP/cs2m$Chlstrl)
+cs2m$ratio<-(cs2m$BP/cs2m$Chlstrl)
+
+cs2m
 head(cs2m_mutate)
 head(cs2m)
 cs2m_1<-cs2m
@@ -78,7 +83,8 @@ cs2_m_211
 ethinicity_white<-subset(grades,ethnicity==4)
 head(ethinicity_white)
 boxplot(ethinicity_white$final,main='white eninicity',col='green')
-
+ethinicity_white1<-subset(grades,ethinicity==5)
+eth4=merge(ethinicity_white,ethinicity_white1)
 ##record final with sqrt final
 grades$sqrtfinal<-sqrt(grades$final)
 head(grades$sqrtfinal)
@@ -135,3 +141,12 @@ sam
 ##Summarize
 library(psych)
 summarise(cs2m,mean_age=mean(Age,na.rm = T),median_age=median(Age,na.rm = T))
+42=bb
+a<-grades[,c(13,18,19)]
+pairs.panels(a)
+a
+names(grades)
+colnames(grades)
+variable.names(grades)
+df<-cs2m %>%
+df

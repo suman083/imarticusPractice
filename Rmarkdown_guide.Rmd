@@ -1,0 +1,44 @@
+---
+title: "Untitled"
+author: "Suman"
+date: "09/11/2020"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r mcars}
+slr <- read.csv("G:/Suman/batch34/R Markdown/slr.csv", stringsAsFactors=TRUE)
+
+dim(slr)
+str(slr)
+summary(slr)
+```
+
+
+```{r mncars}
+hist(slr$Sales,col='red')
+hist(slr$Advt,col="blue")
+```
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+
+
