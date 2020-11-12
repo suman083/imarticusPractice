@@ -34,3 +34,4 @@ library(wordcloud)
 w<-sort(rowSums(tdm), decreasing = T)
 set.seed(222)
 wordcloud(words = names(w),freq = w,max.words = 150, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(.6,.3) )
+
