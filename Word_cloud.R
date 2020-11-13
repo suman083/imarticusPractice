@@ -33,5 +33,5 @@ barplot(w,las=2,col=rainbow(50))
 library(wordcloud)
 w<-sort(rowSums(tdm), decreasing = T)
 set.seed(222)
-wordcloud(words = names(w),freq = w,max.words = 150, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(3,.3) )
+wordcloud(words = names(w),freq = w,max.words = 150, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(4,.3) )
 
