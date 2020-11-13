@@ -1,5 +1,5 @@
 ### Word cloud 
-cd <- read.csv("G:/Suman/batch34/project____circulatepls/cereals_data.csv", stringsAsFactors=TRUE)
+cd <- read.csv("G:/Suman/batch34/project____circulatepls/cereals_data1.csv", stringsAsFactors=TRUE)
 wt_cal<-cd[,c(1,4,14)]
 wt_cal
 View(wt_cal)
@@ -11,7 +11,7 @@ inspect(corpus[1:5])
 #clean tm_map(0)
 corpus<-tm_map(corpus,tolower)
 inspect(corpus)
-corpus<-tm_map(corpus,removeNumbers)
+#corpus<-tm_map(corpus,removeNumbers)
 corpus<-tm_map(corpus,removePunctuation)
 inspect(corpus)
 cleanset<-tm_map(corpus,removeWords,stopwords("en"))
@@ -33,5 +33,5 @@ barplot(w,las=2,col=rainbow(50))
 library(wordcloud)
 w<-sort(rowSums(tdm), decreasing = T)
 set.seed(222)
-wordcloud(words = names(w),freq = w,max.words = 150, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(.6,.3) )
+wordcloud(words = names(w),freq = w,max.words = 150, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(3,.3) )
 
