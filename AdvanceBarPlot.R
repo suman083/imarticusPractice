@@ -3,13 +3,14 @@ library(tidyverse)
 cd <- read.csv("G:/Suman/batch34/project____circulatepls/cereals_data1.csv", stringsAsFactors=TRUE)
 view(cd)
 #selecting data for plot
-Imp_nut<-cd[,c(1,4,5,12)]
+Imp_nut<-cd[,c(4,5,9,10,12)]
 view(Imp_nut)
 Imp_nut_top<-head(Imp_nut[order(Imp_nut$calories, decreasing=TRUE), ], 20)
 view(Imp_nut_top)
 Imp_nut_top<-as.matrix(Imp_nut_top)
 mode(Imp_nut_top)="numeric"
 View(Imp_nut1)
+#Imp_nut_top<-
 barplot(Imp_nut_top,beside = TRUE,col = rainbow(50))
 barplot(table(Imp_nut1),beside = T,)
 
