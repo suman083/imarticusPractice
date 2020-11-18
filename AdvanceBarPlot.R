@@ -9,7 +9,7 @@ Imp_nut_top<-head(Imp_nut[order(Imp_nut$calories, decreasing=TRUE), ], 20)
 view(Imp_nut_top)
 Imp_nut_top<-as.matrix(Imp_nut_top)
 mode(Imp_nut_top)="numeric"
-View(Imp_nut1)
+
 #Imp_nut_top<-
 barplot(Imp_nut_top,beside = TRUE,col = rainbow(50))
 barplot(table(Imp_nut1),beside = T,)

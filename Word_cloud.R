@@ -1,6 +1,6 @@
 ### Word cloud 
 cd <- read.csv("G:/Suman/batch34/project____circulatepls/cereals_data1.csv", stringsAsFactors=TRUE)
-wt_cal<-cd[,c(1,4,14)]
+wt_cal<-cd[,c(1,2,4,14)]
 wt_cal
 View(wt_cal)
 #Build corpus
@@ -35,4 +35,5 @@ library(wordcloud)
 w<-sort(rowSums(tdm), decreasing = T)
 set.seed(222)
 wordcloud(words = names(w),freq = w,max.words = 1500, random.order = FALSE,colors = brewer.pal(10,"Dark2"),scale =c(3,.3) )
+
 
