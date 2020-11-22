@@ -11,5 +11,5 @@ data1$mfrFlag <- as.numeric(!is.na(data1$calories))
 pichartdata<-tapply(data1$mfrFlag , data1$mfr,sum)
 pichartdata
 pichartdata<-as.matrix(pichartdata)
-pie(pichartdata[,1],main = " Manufacturer of cereal",col = rainbow(length(pichartdata)))
+pie(pichartdata[,1],main = " Manufacturer of cereal",label=pichartdata[,1],col = rainbow(length(pichartdata)))
 

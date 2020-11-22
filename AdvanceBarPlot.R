@@ -11,17 +11,20 @@ Imp_nut_top<-as.matrix(Imp_nut_top)
 mode(Imp_nut_top)="numeric"
 
 #Imp_nut_top<-
+max_cal<-max(Imp_nut$calories)
+mx_cal_name<-filter(cd,cd$calories==160)$name
+
 barplot(Imp_nut_top,beside = TRUE,col = rainbow(50))
 barplot(table(Imp_nut1),beside = T,)
 
 #gathering columns together
 
-df_nut=gather(Imp_nut_top,Nut_type,length,1:4)
-head(df_nut)
-view(df_nut)
+##df_nut=gather(Imp_nut_top,Nut_type,length,1:4)
+#head(df_nut)
+#view(df_nut)
 
 #Grouping and summarizing data
 #group by
-df_nut_grp<-group_by(df_nut,Nut_type)
-head(df_nut_grp)
-df_nut_grp<-group_by(df_nut,Nut_type,)
+# df_nut_grp<-group_by(df_nut,Nut_type)
+# head(df_nut_grp)
+# df_nut_grp<-group_by(df_nut,Nut_type,)
