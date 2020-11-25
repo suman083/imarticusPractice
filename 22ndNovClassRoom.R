@@ -2,6 +2,8 @@ cs2m <- read.csv("G:/Suman/batch34/cs2m.csv", stringsAsFactors=TRUE)
 install.packages("gmodels")
 library(gmodels)
 CrossTable(cs2m$Prgnt,cs2m$AnxtyLH)
+
+#finding test_statistics = t_stat = One Sample T-Test = [mean_sample - mu]/SE_mean(sd/sqrt(n)
 ##se= sd/sqrt(n)
 se<-18.8/sqrt(30)
 se
@@ -25,10 +27,31 @@ view(grades)
 t.test(grades$quiz1,grades$quiz2,paired = T)
 mean(grades$quiz1)
 mean(grades$quiz2)
-t.test(grades$quiz2,grades$quiz3,paired = T)
+mean_difference<-mean(grades$quiz1)-mean(grades$quiz2)
+mean_difference
 
+t.test(grades$quiz2,grades$quiz3,paired = T)
+#-.51+t_critical*SE(diff)
+ub<- -.51+1.98*.179
+ub  #
+
+lb<-0.51-1.98*.18
+lb
 #
-t_critical=TINV(0.05,df=104)
+t_critical=TINV(0.05,df=104)->1.98
+#std er of diff
+diff=grades$quiz1-grades$quiz2
+diff
+
+sd=sd(diff)
+sd  #1.84
+
+#se=sd/sqrt(n)
+se=1.84/sqrt(105)
+se   #0.179
+
+
+
 
 
 a=table(cs2m$AnxtyLH)
@@ -41,3 +64,8 @@ ss=cs2m[,c(1,2,3)]
 str(ss)
 library(psych)
 pairs.panels(ss)
+
+
+t.test(grades$quiz2,grades$quiz3,paired = T)
+t.test(grades$quiz1,grades$quiz4,paired = T)
+t.test(grades$quiz2,grades$quiz4,paired = T)

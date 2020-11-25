@@ -56,3 +56,5 @@ chisq.test(cs2m$AnxtyLH,cs2m$DrugR)
 #post hoc comparision -> the mean difference across group D&B  
 TukeyHSD(results)
 
+?"~"
+  
