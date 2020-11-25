@@ -25,6 +25,8 @@ view(grades)
 t.test(grades$quiz1,grades$quiz2,paired = T)
 mean(grades$quiz1)
 mean(grades$quiz2)
+t.test(grades$quiz2,grades$quiz3,paired = T)
+
 #
 t_critical=TINV(0.05,df=104)
 
